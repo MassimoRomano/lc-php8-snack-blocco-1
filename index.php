@@ -54,22 +54,25 @@ foreach ($partite_di_basket as $partita) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <div class="container">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Casa</th>
-      <th scope="col">Fuori Casa</th>
-      <th scope="col">Punteggio</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><?php echo $partita['squadra_casa']?></td>
-      <td><?php echo $partita['squadra_ospite']?></td>
-      <td><?php echo $partita["punti_casa"] . "-" . $partita["punti_ospite"] ?></td>
-    </tr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Casa</th>
+                <th scope="col">Fuori Casa</th>
+                <th scope="col">Punteggio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($partite_di_basket as $index => $partita) : ?>
+                <tr>
+                    <th scope="row"><?php echo $index + 1; ?></th>
+                    <td><?php echo $partita['squadra_casa']; ?></td>
+                    <td><?php echo $partita['squadra_ospite']; ?></td>
+                    <td><?php echo $partita["punti_casa"] . "-" . $partita["punti_ospite"]; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
 </div>
 
 <body>
