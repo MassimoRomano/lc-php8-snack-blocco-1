@@ -38,10 +38,10 @@ $partite_di_basket = [
     ]
 ];
 
-foreach ($partite_di_basket as $partita) {
+/* foreach ($partite_di_basket as $partita) {
     echo $partita["squadra_casa"] . " - " . $partita["squadra_ospite"] . " | " . $partita["punti_casa"] . "-" . $partita["punti_ospite"] . "<br>";
 };
-
+ */
 ?>
 
 <!DOCTYPE html>
@@ -53,10 +53,10 @@ foreach ($partite_di_basket as $partita) {
     <title>Snack 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<div class="container">
+<div class="container my-5">
     <table class="table">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col">#</th>
                 <th scope="col">Casa</th>
                 <th scope="col">Fuori Casa</th>
@@ -65,7 +65,7 @@ foreach ($partite_di_basket as $partita) {
         </thead>
         <tbody>
             <?php foreach ($partite_di_basket as $index => $partita) : ?>
-                <tr>
+                <tr class="text-center">
                     <th scope="row"><?php echo $index + 1; ?></th>
                     <td><?php echo $partita['squadra_casa']; ?></td>
                     <td><?php echo $partita['squadra_ospite']; ?></td>
@@ -73,6 +73,7 @@ foreach ($partite_di_basket as $partita) {
                 </tr>
             <?php endforeach; ?>
         </tbody>
+    </table>
 </div>
 
 <body>
